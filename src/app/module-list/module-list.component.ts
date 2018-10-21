@@ -17,13 +17,18 @@ export class ModuleListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.changeMachineService.selectedMachine.subscribe(message=>{
-      if (message == 'sm') {
-        this.componentList = [{name: "salesOrder", machine: "sm"}];
-      }else if(message == 'wh'){
-        this.componentList = [{name: "outboundFlow", machine: "wh"}]
-      }
+    this.changeMachineService.selectedMachine.subscribe(machineChoosen=>{
+      this.updateComponentList(machineChoosen);
     });
   }
 
+
+  private updateComponentList(machineChoosen: string) {
+    if (machineChoosen == 'sm') {
+      this.componentList = [{ name: "salesOrder", machine: "sm" }];
+    }
+    else if (machineChoosen == 'wh') {
+      this.componentList = [{ name: "outboundFlow", machine: "wh" }];
+    }
+  }
 }
