@@ -1,0 +1,10 @@
+<div *ngIf="machineSelected">
+    <mat-form-field>
+      <mat-select placeholder="Choose One">
+        <mat-option>No Selection</mat-option>
+        <mat-option *ngFor="let component of componentList" [value] = component>
+          {{component.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+</div>

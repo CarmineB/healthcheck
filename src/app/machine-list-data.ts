@@ -1,0 +1,1 @@
+export const MACHINES : string[] = ['sm','wh'];

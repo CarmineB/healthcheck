@@ -1,0 +1,10 @@
+<mat-form-field>
+    <mat-select placeholder="Choose One" [(value)] = "selectedMachine"
+    (selectionChange)="onSelectionChange(selectedMachine)">
+      <mat-option>No Selection</mat-option>
+      <mat-option *ngFor="let machine of machines" [value] = machine>
+        {{machine}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <app-module-list [machineSelected]="selectedMachine"></app-module-list>
